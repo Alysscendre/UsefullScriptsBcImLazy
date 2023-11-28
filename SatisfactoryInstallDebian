@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#variables
+INSTALL_DIR="/home/alysscendre/satisfactory"  #  installation directory
+STEAMCMD_DIR="/home/alysscendre/steam"     #  SteamCMD location
+APP_ID="1690800"                               #  Steam ID
+
+#bc u again forgot to create the folder lmao, we are here to save the day
+mkdir -p "$INSTALL_DIR"
+
+#Run SteamCMD to install + we call it without needing to be in the folder
+"$STEAMCMD_DIR/steamcmd.sh" +login anonymous +force_install_dir "$INSTALL_DIR" +app_update "$APP_ID" validate +exit
+
+echo "Satisfactory has been installed in $INSTALL_DIR"
